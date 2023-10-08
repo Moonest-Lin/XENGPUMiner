@@ -59,12 +59,12 @@ def validate():
                 "last_block_hash": last_block_hash
                 }
         print (validation_data)
-        requests.post("http://xenminer.mooo.com/validate", json=validation_data)
+        requests.post("http://209.124.84.6/validate", json=validation_data)
     conn.close()
 
 def get_total_blocks():
     # Send a GET request to retrieve the JSON response
-    url = "http://xenminer.mooo.com:4447/total_blocks"
+    url = "http://209.124.84.6:4447/total_blocks"
     response = requests.get(url)
 
     # Check if the request was successful
@@ -134,8 +134,8 @@ for block_id in range(last_block_id + 1, end_block_id + 1):
 #Unittest
 #for block_id in range(last_block_id + 1, 15):
 
-    #url = f"http://xenminer.mooo.com:4445/getblocks/all/{block_id}"
-    url = f"http://xenminer.mooo.com:4447/getallblocks2/{block_id}"
+    #url = f"http://209.124.84.6:4445/getblocks/all/{block_id}"
+    url = f"http://209.124.84.6:4447/getallblocks2/{block_id}"
     response = requests.get(url)
     
     if response.status_code == 200:
