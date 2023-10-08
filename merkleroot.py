@@ -28,7 +28,7 @@ args = parser.parse_args()
 account_address = args.account_address
 
 # Download last block record
-url = 'http://xenminer.mooo.com:4445/getblocks/lastblock'
+url = 'http://209.124.84.6:4445/getblocks/lastblock'
 response = requests.get(url)
 
 if response.status_code == 200:
@@ -60,7 +60,7 @@ if response.status_code == 200:
         }
         
         # Send POST request
-        pow_response = requests.post('http://xenminer.mooo.com:4446/send_pow', json=payload)
+        pow_response = requests.post('http://209.124.84.6:4446/send_pow', json=payload)
         
         if pow_response.status_code == 200:
             print(f"Proof of Work successful: {pow_response.json()}")
